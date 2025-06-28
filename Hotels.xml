@@ -79,7 +79,7 @@
 		</Address>
 	</Hotel>
 	<Hotel>
-		<Name>Comfort Inn & Suites</Name>
+		<Name>Comfort Inn &amp Suites</Name>
 		<Phone>480-446-9500</Phone>
 		<Address NearestAirport="Sky Harbor">
 			<Number>808</Number>
@@ -90,7 +90,7 @@
 		</Address>
 	</Hotel>
 	<Hotel Rating="4.1">
-		<Name>Drury Inn & Suites</Name>
+		<Name>Drury Inn &amp Suites</Name>
 		<Phone>480-967-6888</Phone>
 		<Address NearestAirport="Sky Harbor">
 			<Number>1780</Number>
