@@ -1,7 +1,13 @@
-﻿<Hotel>
-	<!-- ERROR 1: root should be Hotels -->
+﻿<!-- 
+  ERROR 1: The root element should be <Hotels> not <Hotel>.
+  The correct XML should start with <Hotels> and all <Hotel> elements should be nested inside.
+-->
+<Hotel>
+	<!-- Each <Hotel> represents a single hotel. -->
+	
 	<Hotel Rating="4.2">
 		<Name>Westin</Name>
+		<!-- Multiple phone numbers are allowed -->
 		<Phone>480-968-8885</Phone>
 		<Phone>800-937-8461</Phone>
 		<Address NearestAirport="Sky Harbor">
@@ -12,10 +18,14 @@
 			<Zip>85281</Zip>
 		</Address>
 	</Hotel>
+
 	<Hotel Rating="4.7">
 		<Name>Hilton Garden Inn</Name>
-		<!-- ERROR 2: Missing required attribute NearestAirport -->
 		<Phone>480-966-4092</Phone>
+		<!-- 
+			ERROR 2: The required attribute NearestAirport is missing from Address.
+			Address must always have NearestAirport as an attribute, e.g., <Address NearestAirport="...">
+		-->
 		<Address>
 			<Number>2102</Number>
 			<Street>E Rio Salado Pkwy</Street>
@@ -24,9 +34,13 @@
 			<Zip>85281</Zip>
 		</Address>
 	</Hotel>
+	
 	<Hotel>
 		<Name>Hyatt Place</Name>
-		<!-- ERROR 3: Missing Phone element -->
+		<!-- 
+			ERROR 3: The required Phone element is missing.
+			Each Hotel must have at least one <Phone> element.
+		-->
 		<Address NearestAirport="Sky Harbor">
 			<Number>1413</Number>
 			<Street>W Rio Salado Pkwy</Street>
@@ -35,8 +49,12 @@
 			<Zip>85281</Zip>
 		</Address>
 	</Hotel>
+	
 	<Hotel Rating="4.5">
-		<!-- ERROR 5: Two Name elements -->
+		<!-- 
+			ERROR 5: There are two <Name> elements.
+			Each Hotel must have exactly one <Name> element.
+		-->
 		<Name>Residence Inn</Name>
 		<Name>Residence Inn Duplicate</Name>
 		<Phone>480-967-2300</Phone>
@@ -48,16 +66,22 @@
 			<Zip>85281</Zip>
 		</Address>
 	</Hotel>
+	
 	<Hotel Rating="4.3">
 		<Name>Tempe Mission Palms</Name>
 		<Phone>480-894-1400</Phone>
 		<Phone>800-547-8705</Phone>
-		<!-- ERROR 4: No closing tag for Address -->
+		<!-- 
+			ERROR 4: The Address element does not have a closing tag.
+			It should end with </Address>, but instead it is closed as </Hotel>.
+		-->
 		<Address NearestAirport="Sky Harbor">
 			<Number>60</Number>
 			<Street>E 5th St</Street>
 			<City>Tempe</City>
 			<State>AZ</State>
 			<Zip>85281</Zip>
-		</Hotel>
+		<!-- Missing: </Address> here -->
+	</Hotel>
+	
 </Hotel>
