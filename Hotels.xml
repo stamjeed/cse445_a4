@@ -1,16 +1,34 @@
+<!--
+  Root element: contains the list of hotels in Tempe, AZ.
+  Each <Hotel> element represents a hotel and may include attributes and sub-elements.
+-->
 <Hotels>
+  
+  <!-- 
+    Hotel element.
+    Attribute 'Rating' (optional): the hotel's rating as a decimal (e.g., 4.2).
+  -->
   <Hotel Rating="4.2">
+    <!-- Hotel's name -->
     <Name>Westin</Name>
+    <!-- Multiple phone numbers allowed for a hotel -->
     <Phone>480-968-8885</Phone>
     <Phone>800-937-8461</Phone>
+    <!--
+      Address element:
+        Attribute 'NearestAirport': name of the closest airport (required).
+        Contains child elements for detailed address.
+    -->
     <Address NearestAirport="Sky Harbor">
-      <Number>11</Number>
-      <Street>E 7th St</Street>
-      <City>Tempe</City>
-      <State>AZ</State>
-      <Zip>85281</Zip>
+      <Number>11</Number>           <!-- Street number -->
+      <Street>E 7th St</Street>     <!-- Street name -->
+      <City>Tempe</City>            <!-- City -->
+      <State>AZ</State>             <!-- State abbreviation -->
+      <Zip>85281</Zip>              <!-- Zip code -->
     </Address>
   </Hotel>
+
+  <!-- Second hotel, with one phone number and rating -->
   <Hotel Rating="4.7">
     <Name>Hilton Garden Inn</Name>
     <Phone>480-966-4092</Phone>
@@ -22,6 +40,8 @@
       <Zip>85281</Zip>
     </Address>
   </Hotel>
+
+  <!-- Hotel with no rating attribute (rating is optional) -->
   <Hotel>
     <Name>Hyatt Place</Name>
     <Phone>480-804-9544</Phone>
@@ -33,6 +53,9 @@
       <Zip>85281</Zip>
     </Address>
   </Hotel>
+
+  <!-- More hotels follow the same structure -->
+
   <Hotel Rating="4.5">
     <Name>Residence Inn</Name>
     <Phone>480-967-2300</Phone>
@@ -44,6 +67,7 @@
       <Zip>85281</Zip>
     </Address>
   </Hotel>
+
   <Hotel Rating="4.3">
     <Name>Tempe Mission Palms</Name>
     <Phone>480-894-1400</Phone>
@@ -56,6 +80,7 @@
       <Zip>85281</Zip>
     </Address>
   </Hotel>
+
   <Hotel>
     <Name>Aloft Tempe</Name>
     <Phone>480-968-6800</Phone>
@@ -67,6 +92,7 @@
       <Zip>85281</Zip>
     </Address>
   </Hotel>
+
   <Hotel Rating="4.0">
     <Name>Courtyard by Marriott</Name>
     <Phone>480-966-2800</Phone>
@@ -78,6 +104,7 @@
       <Zip>85281</Zip>
     </Address>
   </Hotel>
+
   <Hotel>
     <Name>Comfort Inn &amp; Suites</Name>
     <Phone>480-446-9500</Phone>
@@ -89,6 +116,7 @@
       <Zip>85281</Zip>
     </Address>
   </Hotel>
+
   <Hotel Rating="4.1">
     <Name>Drury Inn &amp; Suites</Name>
     <Phone>480-967-6888</Phone>
@@ -100,6 +128,7 @@
       <Zip>85282</Zip>
     </Address>
   </Hotel>
+
   <Hotel Rating="3.9">
     <Name>Motel 6</Name>
     <Phone>480-736-0186</Phone>
