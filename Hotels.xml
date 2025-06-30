@@ -1,34 +1,36 @@
 <!--
-  Root element: contains the list of hotels in Tempe, AZ.
-  Each <Hotel> element represents a hotel and may include attributes and sub-elements.
+  Hotels.xml
+  Directory of hotels in Tempe, AZ.
 -->
+
 <Hotels>
   
-  <!-- 
-    Hotel element.
-    Attribute 'Rating' (optional): the hotel's rating as a decimal (e.g., 4.2).
+  <!--
+    Example of a hotel with a Rating attribute.
+    The hotel has two phone numbers (multiple Phone elements allowed).
   -->
   <Hotel Rating="4.2">
-    <!-- Hotel's name -->
+    <!-- Name of the hotel (required element) -->
     <Name>Westin</Name>
-    <!-- Multiple phone numbers allowed for a hotel -->
+    <!-- Phone numbers (at least one required, multiple allowed) -->
     <Phone>480-968-8885</Phone>
     <Phone>800-937-8461</Phone>
     <!--
-      Address element:
-        Attribute 'NearestAirport': name of the closest airport (required).
-        Contains child elements for detailed address.
+      Address element contains full address details.
+      Required attribute: NearestAirport, the closest airport to the hotel.
     -->
     <Address NearestAirport="Sky Harbor">
-      <Number>11</Number>           <!-- Street number -->
-      <Street>E 7th St</Street>     <!-- Street name -->
-      <City>Tempe</City>            <!-- City -->
-      <State>AZ</State>             <!-- State abbreviation -->
-      <Zip>85281</Zip>              <!-- Zip code -->
+      <Number>11</Number>           <!-- Street number (required) -->
+      <Street>E 7th St</Street>     <!-- Street name (required) -->
+      <City>Tempe</City>            <!-- City (required) -->
+      <State>AZ</State>             <!-- State abbreviation (required) -->
+      <Zip>85281</Zip>              <!-- Zip code (required) -->
     </Address>
   </Hotel>
 
-  <!-- Second hotel, with one phone number and rating -->
+  <!--
+    Second hotel with a Rating and only one phone number.
+  -->
   <Hotel Rating="4.7">
     <Name>Hilton Garden Inn</Name>
     <Phone>480-966-4092</Phone>
@@ -41,7 +43,10 @@
     </Address>
   </Hotel>
 
-  <!-- Hotel with no rating attribute (rating is optional) -->
+  <!--
+    Example of a hotel WITHOUT the optional Rating attribute.
+    Demonstrates that Rating is optional.
+  -->
   <Hotel>
     <Name>Hyatt Place</Name>
     <Phone>480-804-9544</Phone>
@@ -54,8 +59,9 @@
     </Address>
   </Hotel>
 
-  <!-- More hotels follow the same structure -->
-
+  <!--
+    Another hotel with Rating and one phone number.
+  -->
   <Hotel Rating="4.5">
     <Name>Residence Inn</Name>
     <Phone>480-967-2300</Phone>
@@ -68,6 +74,9 @@
     </Address>
   </Hotel>
 
+  <!--
+    Example of a hotel with multiple phone numbers.
+  -->
   <Hotel Rating="4.3">
     <Name>Tempe Mission Palms</Name>
     <Phone>480-894-1400</Phone>
@@ -81,6 +90,9 @@
     </Address>
   </Hotel>
 
+  <!--
+    Hotel with no Rating, showing that this attribute is not required.
+  -->
   <Hotel>
     <Name>Aloft Tempe</Name>
     <Phone>480-968-6800</Phone>
@@ -93,6 +105,9 @@
     </Address>
   </Hotel>
 
+  <!--
+    Hotel with Rating and one phone number.
+  -->
   <Hotel Rating="4.0">
     <Name>Courtyard by Marriott</Name>
     <Phone>480-966-2800</Phone>
@@ -105,6 +120,9 @@
     </Address>
   </Hotel>
 
+  <!--
+    Another hotel with no Rating attribute.
+  -->
   <Hotel>
     <Name>Comfort Inn &amp; Suites</Name>
     <Phone>480-446-9500</Phone>
@@ -117,6 +135,9 @@
     </Address>
   </Hotel>
 
+  <!--
+    Hotel with Rating and one phone number.
+  -->
   <Hotel Rating="4.1">
     <Name>Drury Inn &amp; Suites</Name>
     <Phone>480-967-6888</Phone>
@@ -129,6 +150,9 @@
     </Address>
   </Hotel>
 
+  <!--
+    Last example hotel, also with Rating attribute.
+  -->
   <Hotel Rating="3.9">
     <Name>Motel 6</Name>
     <Phone>480-736-0186</Phone>
@@ -140,4 +164,5 @@
       <Zip>85281</Zip>
     </Address>
   </Hotel>
+
 </Hotels>
