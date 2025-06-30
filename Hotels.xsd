@@ -1,29 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  XSD Schema for Hotels.xml
+  - Defines the structure and allowed content for a Hotels XML document.
+-->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!-- Root element: Hotels, contains one or more Hotel entries -->
   <xs:element name="Hotels">
     <xs:complexType>
       <xs:sequence>
+      
+        <!-- Hotel element, represents a single hotel.
+             - Must occur at least once, and can repeat (unbounded).
+        -->
         <xs:element name="Hotel" minOccurs="1" maxOccurs="unbounded">
           <xs:complexType>
             <xs:sequence>
+            
+              <!-- Name element: The hotel name (required, single occurrence) -->
               <xs:element name="Name" type="xs:string"/>
+              
+              <!-- Phone element: At least one phone number is required, multiple allowed -->
               <xs:element name="Phone" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+              
+              <!-- Address element: Required, contains address details and airport attribute -->
               <xs:element name="Address">
                 <xs:complexType>
                   <xs:sequence>
+                    <!-- Number: Street number of the hotel address -->
                     <xs:element name="Number" type="xs:string"/>
+                    <!-- Street: Street name of the hotel address -->
                     <xs:element name="Street" type="xs:string"/>
+                    <!-- City: City of the hotel address -->
                     <xs:element name="City" type="xs:string"/>
+                    <!-- State: State abbreviation of the hotel address -->
                     <xs:element name="State" type="xs:string"/>
+                    <!-- Zip: Zip code of the hotel address -->
                     <xs:element name="Zip" type="xs:string"/>
                   </xs:sequence>
+                  <!--
+                    NearestAirport attribute (required):
+                    - Specifies the closest airport to the hotel
+                  -->
                   <xs:attribute name="NearestAirport" type="xs:string" use="required"/>
                 </xs:complexType>
               </xs:element>
+              
             </xs:sequence>
+            <!--
+              Rating attribute (optional):
+              - Specifies the hotel's rating as a decimal value
+            -->
             <xs:attribute name="Rating" type="xs:decimal" use="optional"/>
           </xs:complexType>
         </xs:element>
+        
       </xs:sequence>
     </xs:complexType>
   </xs:element>
